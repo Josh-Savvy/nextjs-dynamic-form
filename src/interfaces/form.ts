@@ -4,13 +4,19 @@ export enum FormFieldType {
 	FILE = "file",
 	URL = "url",
 	EMAIL = "email",
-	Telephone = "phone",
+	TELEPHONE = "phone",
 	SINGLE_SELECT_DROPDOWN = "single_select_dropdown",
 	MULTIPLE_SELECT_DROPDOWN = "multi_select_dropdown",
-	Date = "date",
-	SHORT_ANSWER = "short_answer",
-	PARAGRAPH = "paragraph",
+	DATE = "date",
+	SHORT_ANSWER = "text",
+	PARAGRAPH = "text",
 }
+
+export const FormFieldTypeKeys = Object.keys(FormFieldType).reduce((acc, key) => {
+	const enumKey = FormFieldType[key as keyof typeof FormFieldType];
+	acc[enumKey] = key;
+	return acc;
+}, {} as { [key: string]: string });
 
 export enum FormFieldEnabledFor {
 	MENTOR = "mentor",
