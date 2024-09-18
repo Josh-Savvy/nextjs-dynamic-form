@@ -36,7 +36,7 @@ export const Toggle = ({ onToggle, state }: { onToggle?(value: boolean): void; s
 		<label className="inline-flex items-center cursor-pointer">
 			<input
 				type="checkbox"
-				checked={state === "active"}
+				checked={state ? state === "active" : undefined}
 				value=""
 				className="sr-only peer"
 				onChange={() => {

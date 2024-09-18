@@ -26,9 +26,9 @@ const SelectOptionsType = ({ onSelect, title }: Props) => {
 
 	return (
 		<div>
-			<h1 className="">{title || "Select your preferred options type"}:</h1>
+			<h1 className="tracking-tight text-sm">{title || "Select your preferred options type"}:</h1>
 			<div className="hidden md:grid grid-cols-12 items-center gap-4 mt-3">
-				<div className="grid grid-cols-3 gap-4 col-span-12 xl:col-span-9 overflow-hidden">
+				<div className="grid grid-cols-3 gap-4 col-span-12 lg:col-span-9 overflow-hidden">
 					{filteredOptions.map((opt, i) => (
 						<PreferredOptionLabel
 							type={checkedOptions.find((val) => val.toLowerCase() === opt)}
@@ -40,14 +40,14 @@ const SelectOptionsType = ({ onSelect, title }: Props) => {
 					))}
 				</div>
 				<BasicDropdown
-					containerClassName="col-span-12 xl:col-span-3"
+					containerClassName="col-span-12 lg:col-span-3"
 					values={remainingOptions}
 					title={remainingOptions.find((v) => v === selectedValue) || remainingOptions[0]}
 					titleClassName={clsx(
-						"whitespace-nowrap",
+						"whitespace-nowrap text-sm",
 						remainingOptions.find((v) => v === selectedValue)
 							? "!text-white bg-primary hover:!bg-primary"
-							: "text-[#1e1e1e] bg-gray-300 hover:bg-gray-300",
+							: "text-[#1e1e1e] bg-gray-100 hover:bg-gray-100",
 					)}
 					optionClassName="text-[#7E7E7E]"
 					onSelect={(item) => handleSelect(item)}
@@ -59,12 +59,12 @@ const SelectOptionsType = ({ onSelect, title }: Props) => {
 					values={options}
 					title={options.find((v) => v === selectedValue) || options[0]}
 					titleClassName={clsx(
-						"whitespace-nowrap",
+						"whitespace-nowrap text-sm",
 						options.find((v) => v === selectedValue)
 							? "text-white bg-primary hover:bg-primary"
-							: "text-[#1e1e1e] bg-gray-300 hover:bg-gray-300",
+							: "text-[#1e1e1e] bg-gray-100 hover:bg-gray-100",
 					)}
-					optionClassName="text-[#7E7E7E]"
+					optionClassName="text-[#7E7E7E] text-sm"
 					onSelect={(item) => handleSelect(item)}
 				/>
 			</div>
@@ -81,10 +81,10 @@ const PreferredOptionLabel = ({ option, selected, onSelect, type }: PreferredOpt
 			onClick={() => onSelect(option)}
 			className={clsx(
 				"flex gap-2 items-center p-2 rounded-lg px-6 select-none cursor-pointer justify-center",
-				selected ? "bg-primary text-white" : "bg-gray-300 text-[#1e1e1e]",
+				selected ? "bg-primary text-white" : "bg-gray-100 text-[#1e1e1e]",
 			)}>
 			<input type={type || "hidden"} readOnly disabled />
-			<p className="capitalize">{option.split("_").join(" ")}</p>
+			<p className="capitalize text-sm">{option.split("_").join(" ")}</p>
 		</label>
 	);
 };

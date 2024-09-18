@@ -12,12 +12,6 @@ export enum FormFieldType {
 	PARAGRAPH = "text",
 }
 
-export const FormFieldTypeKeys = Object.keys(FormFieldType).reduce((acc, key) => {
-	const enumKey = FormFieldType[key as keyof typeof FormFieldType];
-	acc[enumKey] = key;
-	return acc;
-}, {} as { [key: string]: string });
-
 export enum FormFieldEnabledFor {
 	MENTOR = "mentor",
 	MENTEE = "mentee",
@@ -42,3 +36,5 @@ export interface Form {
 	name: string;
 	fields: FormField[];
 }
+
+export type FormStep = "1" | "2";

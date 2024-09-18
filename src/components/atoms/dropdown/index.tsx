@@ -40,7 +40,7 @@ export const BasicDropdown = <T,>({
 				onClick={() => setIsOpen((p) => !p)}
 				type="button"
 				className={clsx(
-					"inline-flex gap-4 items-center w-full justify-center rounded-md border border-gray-300 px-4 py-2 text-sm font-medium shadow-sm ring-1 ring-gray-900/5 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-primary capitalize",
+					"inline-flex gap-4 items-center w-full justify-center rounded-md px-4 py-2 text-sm font-medium shadow-sm ring-1 ring-gray-900/5 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-primary capitalize",
 					titleClassName,
 				)}>
 				<p className="">

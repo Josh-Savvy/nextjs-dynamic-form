@@ -10,9 +10,11 @@ interface Props extends React.HtmlHTMLAttributes<HTMLButtonElement> {
 
 const Button = ({ title, variant, ...props }: Props) => {
 	const variantClass =
-		variant === "outlined" ? "border-2 border-primary hover:text-white text-primary hover:bg-primary" : "";
+		variant === "outlined"
+			? "border-[1px] border-primary hover:text-white text-primary hover:bg-primary"
+			: "bg-primary text-white";
 	return (
-		<button {...props} className={clsx(variantClass, "rounded-lg", props.className)}>
+		<button {...props} className={clsx(variantClass, "p-2 text-sm px-4 rounded-lg", props.className)}>
 			{title}
 		</button>
 	);

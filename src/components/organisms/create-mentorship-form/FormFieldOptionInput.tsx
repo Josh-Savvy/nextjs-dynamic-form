@@ -21,7 +21,7 @@ const FormFieldOptionInput = ({ value, type, onChange }: Props) => {
 
 export default FormFieldOptionInput;
 
-const FIELD_ICONS: Record<FormFieldType, React.ReactNode> = {
+export const FIELD_ICONS: Record<FormFieldType, React.ReactNode> = {
 	radio: <RadioSelectIcon />,
 	checkbox: <CheckboxSelectIcon />,
 	phone: <></>,
